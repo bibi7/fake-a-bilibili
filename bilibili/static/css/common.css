@@ -9,3 +9,78 @@
 .right {
   float: right;
 }
+
+@keyframes heightChange {
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 100;
+  }
+}
+
+@keyframes moveLeft-one {
+  0%{
+    margin-left: 10px;
+    opacity: .3
+  }
+  100%{
+    margin-left: 0;
+    opacity: 1
+  }
+}
+
+@keyframes moveLeft-two {
+  0%{
+    margin-left: 20px;
+    opacity: .3
+  }
+  100%{
+    margin-left: 0;
+    opacity: 1
+  }
+}
+
+@keyframes moveLeft-three {
+  0%{
+    margin-left: 30px;
+    opacity: .3
+  }
+  100%{
+    margin-left: 0;
+    opacity: 1
+  }
+}
+
+@keyframes moveLeft-fore {
+  0%{
+    margin-left: 40px;
+    opacity: .3
+  }
+  100%{
+    margin-left: 0;
+    opacity: 1
+  }
+}
+
+@keyframes moveLeft-five {
+  0%{
+    margin-left: 50px;
+    opacity: .3
+  }
+  100%{
+    margin-left: 0;
+    opacity: 1
+  }
+}
+
+@keyframes moveLeft-six {
+  0%{
+    margin-left: 60px;
+    opacity: .3
+  }
+  100%{
+    margin-left: 0;
+    opacity: 1
+  }
+}

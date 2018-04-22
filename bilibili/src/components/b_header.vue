@@ -117,19 +117,32 @@ export default {
           top: 55px;
           left: -15px;
           line-height: 35px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, .2)
         }
         .drop-game {
-          display: none;
+          height: 0;
+          overflow: hidden;
+          transition: height .3s cubic-bezier(0, 0, 0, .79);
         }
       }
       .game:hover .drop-game {
+        height: 180px;
+      }
+      .game:hover .drop-down-content {
+        opacity: 1;
         display: block;
+        height: 180px;
+        transition: height .8s cubic-bezier(0, 0, 0, .79) .2s;
       }
     }
   }
 
   .drop-down-content {
-    border: 1px red solid;
+    display: none;
+    opacity: 0;
+    height: 0;
+    transition: all .3s linear;
+    border-radius: 5px;
     margin: 5px 0;
     width: 120px;
   }
@@ -137,6 +150,26 @@ export default {
   .drop-down-content span {
     display: block;
     text-align: left;
+  }
+
+  .drop-down-content span:nth-child(1) {
+    animation: moveLeft-one .5s;
+  }
+
+  .drop-down-content span:nth-child(2) {
+    animation: moveLeft-two .5s;
+  }
+
+  .drop-down-content span:nth-child(3) {
+    animation: moveLeft-three .5s;
+  }
+
+  .drop-down-content span:nth-child(4) {
+    animation: moveLeft-fore .5s;
+  }
+
+  .drop-down-content span:nth-child(5) {
+    animation: moveLeft-five .5s;
   }
 
   .drop-down-content span a {
