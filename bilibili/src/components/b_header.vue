@@ -253,27 +253,27 @@ export default {
   }
 
   .drop-down-content span:nth-child(2) {
-    animation: moveLeft-two .6s cubic-bezier(0.28, 0.04, 0.2, 1.02);
+    animation: moveLeft-two .62s cubic-bezier(0.28, 0.04, 0.2, 1.02);
   }
 
   .drop-down-content span:nth-child(3) {
-    animation: moveLeft-three .6s cubic-bezier(0.28, 0.04, 0.2, 1.02);
+    animation: moveLeft-three .65s cubic-bezier(0.28, 0.04, 0.2, 1.02);
   }
 
   .drop-down-content span:nth-child(4) {
-    animation: moveLeft-fore .6s cubic-bezier(0.28, 0.04, 0.2, 1.02);
+    animation: moveLeft-fore .68s cubic-bezier(0.28, 0.04, 0.2, 1.02);
   }
 
   .drop-down-content span:nth-child(5) {
-    animation: moveLeft-five .6s cubic-bezier(0.28, 0.04, 0.2, 1.02);
+    animation: moveLeft-five .7s cubic-bezier(0.28, 0.04, 0.2, 1.02);
   }
 
   .drop-down-content span:nth-child(6) {
-    animation: moveLeft-six .6s cubic-bezier(0.28, 0.04, 0.2, 1.02);
+    animation: moveLeft-six .73s cubic-bezier(0.28, 0.04, 0.2, 1.02);
   }
 
   .drop-down-content span:nth-child(7) {
-    animation: moveLeft-seven .6s cubic-bezier(0.28, 0.04, 0.2, 1.02);
+    animation: moveLeft-seven .78s cubic-bezier(0.28, 0.04, 0.2, 1.02);
   }
 
   .drop-down-content span a {
