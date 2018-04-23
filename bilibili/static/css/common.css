@@ -21,7 +21,7 @@
 
 @keyframes moveLeft-one {
   0%{
-    margin-left: 10px;
+    margin-left: 20px;
     opacity: .3
   }
   100%{
@@ -32,7 +32,7 @@
 
 @keyframes moveLeft-two {
   0%{
-    margin-left: 20px;
+    margin-left: 30px;
     opacity: .3
   }
   100%{
@@ -43,7 +43,7 @@
 
 @keyframes moveLeft-three {
   0%{
-    margin-left: 30px;
+    margin-left: 40px;
     opacity: .3
   }
   100%{
@@ -54,7 +54,7 @@
 
 @keyframes moveLeft-fore {
   0%{
-    margin-left: 40px;
+    margin-left: 55px;
     opacity: .3
   }
   100%{
@@ -65,7 +65,7 @@
 
 @keyframes moveLeft-five {
   0%{
-    margin-left: 50px;
+    margin-left: 70px;
     opacity: .3
   }
   100%{
@@ -76,7 +76,18 @@
 
 @keyframes moveLeft-six {
   0%{
-    margin-left: 60px;
+    margin-left: 90px;
+    opacity: .3
+  }
+  100%{
+    margin-left: 0;
+    opacity: 1
+  }
+}
+
+@keyframes moveLeft-seven {
+  0%{
+    margin-left: 110px;
     opacity: .3
   }
   100%{

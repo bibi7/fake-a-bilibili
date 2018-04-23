@@ -2,65 +2,90 @@
   <div class="header">
     <div class="header-in">
       <div class="left">
-        <a href="#">
+        <a href="https://www.bilibili.com/" target="_blank">
           <div class="main-station">
             <span>主站</span>
           </div>
         </a>
         <nav>
-          <a href="#">
+          <a href="https://live.bilibili.com/" target="_blank">
             <div>
               <span>直播</span>
             </div>
           </a>
-          <a href="#">
+          <a href="https://live.bilibili.com/all" target="_blank">
             <div>
               <span>全部</span>
             </div>
           </a>
-          <a href="#">
+          <a href="https://live.bilibili.com/pages/area/ent" target="_blank" class="entertainment">
             <div>
               <span>娱乐</span>
-            </div>
-          </a>
-          <a href="#" class="game">
-            <div>
-              <span>游戏</span>
-              <div class="drop-down drop-game">
+              <div class="drop-down drop-entertainment">
                 <div class="drop-down-content">
-                  <span>
-                    <a href="#">绝地求生</a>
-                  </span>
-                  <span>
-                    <a href="#">英雄联盟</a>
-                  </span>
-                  <span>
-                    <a href="#">DOTA2</a>
-                  </span>
-                  <span>
-                    <a href="#">炉石传说</a>
-                  </span>
-                  <span>
-                    <a href="#">守望先锋</a>
+                  <span v-for="entertainmentInfo in headerLinkList.entertainment">
+                    <a :href="entertainmentInfo.entertainmentLink" target="_blank">{{entertainmentInfo.entertainmentName}}</a>
                   </span>
                 </div>
               </div>
             </div>
           </a>
-          <a href="#">
+          <a href="https://live.bilibili.com/p/eden/area-tags#/2/0" target="_blank" class="game">
             <div>
-              <span>手游</span>
+              <span>游戏</span>
+              <div class="drop-down drop-game">
+                <div class="drop-down-content">
+                  <span v-for="gameInfo in headerLinkList.game">
+                    <a :href="gameInfo.gameLink" target="_blank">{{gameInfo.gameName}}</a>
+                  </span>
+                </div>
+              </div>
             </div>
           </a>
-          <a href="#">
+          <a href="https://live.bilibili.com/p/eden/area-tags#/3/0" target="_blank" class="phone-game">
+            <div>
+              <span>手游</span>
+              <div class="drop-down drop-phoneGame">
+                <div class="drop-down-content">
+                  <span v-for="phoneGameInfo in headerLinkList.phoneGame">
+                    <a :href="phoneGameInfo.phoneGameLink" target="_blank">{{phoneGameInfo.phoneGameName}}</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="https://live.bilibili.com/pages/area/draw" target="_blank" class="draw">
             <div>
               <span>绘画</span>
+              <div class="drop-down drop-draw">
+                <div class="drop-down-content">
+                  <span v-for="drawInfo in headerLinkList.draw">
+                    <a :href="drawInfo.drawLink" target="_blank">{{drawInfo.drawName}}</a>
+                  </span>
+                </div>
+              </div>
             </div>
           </a>
         </nav>
       </div>
       <div class="right">
-        2
+        <nav>
+          <a href="#">
+            <div>
+              <span>动态</span>
+            </div>
+          </a>
+          <a href="#">
+            <div>
+              <span>签到</span>
+            </div>
+          </a>
+          <a href="#">
+            <div>
+              <span>下载</span>
+            </div>
+          </a>
+        </nav>
       </div>
     </div>
   </div>
@@ -68,10 +93,40 @@
 
 <script>
 export default {
-  name: 'header',
+  name: 'header_',
   data () {
     return {
-      msg: ''
+      headerLinkList: {
+        game:[
+          {gameName: '绝地求生' ,gameLink: 'https://live.bilibili.com/p/eden/area-tags#/2/80'},
+          {gameName: '英雄联盟' ,gameLink: 'https://live.bilibili.com/p/eden/area-tags#/2/86'},
+          {gameName: 'DOTA2' ,gameLink: 'https://live.bilibili.com/p/eden/area-tags#/2/92'},
+          {gameName: '炉石传说' ,gameLink: 'https://live.bilibili.com/p/eden/area-tags#/2/91'},
+          {gameName: '守望先锋' ,gameLink: 'https://live.bilibili.com/p/eden/area-tags#/2/87'}
+        ],
+        draw:[
+          {drawName: '原创绘画' ,drawLink: 'https://live.bilibili.com/p/eden/area-tags#/4/51'},
+          {drawName: '同人绘画' ,drawLink: 'https://live.bilibili.com/p/eden/area-tags#/4/94'},
+          {drawName: '临摹绘画' ,drawLink: 'https://live.bilibili.com/p/eden/area-tags#/4/95'},
+          {drawName: '其他绘画' ,drawLink: 'https://live.bilibili.com/p/eden/area-tags#/4/96'},
+        ],
+        entertainment:[
+          {entertainmentName: '美少女' ,entertainmentLink: 'https://live.bilibili.com/pages/area/ent-all#1/139'},
+          {entertainmentName: '唱见' ,entertainmentLink: 'https://live.bilibili.com/pages/area/ent-all#12/21'},
+          {entertainmentName: '才艺' ,entertainmentLink: 'https://live.bilibili.com/pages/area/ent-all#12/143'},
+          {entertainmentName: 'ASMR' ,entertainmentLink: 'https://live.bilibili.com/pages/area/ent-all#1/30'},
+          {entertainmentName: '声优' ,entertainmentLink: 'https://live.bilibili.com/pages/area/ent-all#12/24'},
+          {entertainmentName: '户外' ,entertainmentLink: 'https://live.bilibili.com/pages/area/ent-all#2/123'},
+          {entertainmentName: '美食' ,entertainmentLink: 'https://live.bilibili.com/pages/area/ent-all#2/136'},
+        ],
+        phoneGame:[
+          {phoneGameName: 'FGO' ,phoneGameLink: 'https://live.bilibili.com/p/eden/area-tags#/3/37'},
+          {phoneGameName: '王者荣耀' ,phoneGameLink: 'https://live.bilibili.com/p/eden/area-tags#/3/35'},
+          {phoneGameName: '碧蓝航线' ,phoneGameLink: 'https://live.bilibili.com/p/eden/area-tags#/3/113'},
+          {phoneGameName: '崩坏3' ,phoneGameLink: 'https://live.bilibili.com/p/eden/area-tags#/3/40'},
+          {phoneGameName: '其他手游' ,phoneGameLink: 'https://live.bilibili.com/p/eden/area-tags#/3/98'},
+        ]
+      }
     }
   }
 }
@@ -82,24 +137,27 @@ export default {
   .header {
     height: @height;
     background-color: #fff;
-
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     .header-in {
-      width: 80%;
+      width: 65%;
       margin: 0 auto;
       height: 100%;
       color: #646C7A;
       font-size: 12px;
       line-height: @height;
+
       &::after {
         content: '';
         display: block;
         clear: both;
         visibility: hidden;
       }
+
       nav {
         display: inline-block;
         margin-left: 15px;
       }
+
       nav > a{
         display: inline-block;
         padding: 0 15px;
@@ -107,28 +165,66 @@ export default {
         & > div:first-child {
           position: relative;
         }
+
         &:hover {
           background-color: #A6A9AB;
           color: #fff;
         }
+
         .drop-down {
           position: absolute;
-          border-radius: 5px;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
           top: 55px;
+          background-color: #fff;
+          z-index: 10;
           left: -15px;
           line-height: 35px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, .2)
-        }
-        .drop-game {
+          box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
           height: 0;
           overflow: hidden;
           transition: height .3s cubic-bezier(0, 0, 0, .79);
         }
       }
+
       .game:hover .drop-game {
         height: 180px;
       }
+
       .game:hover .drop-down-content {
+        opacity: 1;
+        display: block;
+        height: 180px;
+        transition: height .8s cubic-bezier(0, 0, 0, .79) .2s;
+      }
+
+      .draw:hover .drop-draw {
+        height: 150px;
+      }
+
+      .draw:hover .drop-down-content {
+        opacity: 1;
+        display: block;
+        height: 150px;
+        transition: height .8s cubic-bezier(0, 0, 0, .79) .2s;
+      }
+
+      .entertainment:hover .drop-entertainment {
+        height: 250px;
+      }
+
+      .entertainment:hover .drop-down-content {
+        opacity: 1;
+        display: block;
+        height: 250px;
+        transition: height .8s cubic-bezier(0, 0, 0, .79) .2s;
+      }
+
+      .phone-game:hover .drop-phoneGame {
+        height: 180px;
+      }
+
+      .phone-game:hover .drop-down-content {
         opacity: 1;
         display: block;
         height: 180px;
@@ -153,23 +249,31 @@ export default {
   }
 
   .drop-down-content span:nth-child(1) {
-    animation: moveLeft-one .5s;
+    animation: moveLeft-one .6s cubic-bezier(0.28, 0.04, 0.2, 1.02);
   }
 
   .drop-down-content span:nth-child(2) {
-    animation: moveLeft-two .5s;
+    animation: moveLeft-two .6s cubic-bezier(0.28, 0.04, 0.2, 1.02);
   }
 
   .drop-down-content span:nth-child(3) {
-    animation: moveLeft-three .5s;
+    animation: moveLeft-three .6s cubic-bezier(0.28, 0.04, 0.2, 1.02);
   }
 
   .drop-down-content span:nth-child(4) {
-    animation: moveLeft-fore .5s;
+    animation: moveLeft-fore .6s cubic-bezier(0.28, 0.04, 0.2, 1.02);
   }
 
   .drop-down-content span:nth-child(5) {
-    animation: moveLeft-five .5s;
+    animation: moveLeft-five .6s cubic-bezier(0.28, 0.04, 0.2, 1.02);
+  }
+
+  .drop-down-content span:nth-child(6) {
+    animation: moveLeft-six .6s cubic-bezier(0.28, 0.04, 0.2, 1.02);
+  }
+
+  .drop-down-content span:nth-child(7) {
+    animation: moveLeft-seven .6s cubic-bezier(0.28, 0.04, 0.2, 1.02);
   }
 
   .drop-down-content span a {
