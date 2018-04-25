@@ -69,6 +69,11 @@
         </nav>
       </div>
       <div class="right">
+        <a href="#" class="user left">
+          <div class="user-box">
+
+          </div>
+        </a>
         <nav>
           <a href="#">
             <div>
@@ -303,6 +308,29 @@ export default {
       height:16px;
       left: -19px;
       top: 19px;
+    }
+  }
+
+  .user {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+
+    .user-box {
+      position: absolute;
+      border-radius: 50%;
+      background: url('../../static/img/user.jpg') no-repeat center;
+      background-size: 60%;
+      width: 55px;
+      height: 55px;
+      transition: all .2s linear;
+    }
+
+    &:hover .user-box {
+      background-size: 110%;
+      transform: translateY(50%);
+      box-shadow: 0 0 1em .1em rgba(35, 173, 229, .3)
     }
   }
 </style>
