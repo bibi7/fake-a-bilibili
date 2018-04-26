@@ -70,8 +70,23 @@
       </div>
       <div class="right">
         <a href="#" class="user left">
-          <div class="user-box">
+          <div class="user-box"></div>
+          <div class="user-dropdown">
+            <!--id以及经验条区域-->
+            <div class="id-experience-content">
+              <span>{{ueseName}}</span>
+              <i :src="isGrandfatherUrl" class="icon-father"></i>
+              <div class="experience">
+                <span>{{levelFrom}}</span>
+                <div class="ex-line">
 
+                </div>
+                <span>{{levelTo}}</span>
+              </div>
+            </div>
+            <!-- 金瓜子、银瓜子、成就值 -->
+            <!--直播中心信息-->
+            <!--退出-->
           </div>
         </a>
         <nav>
@@ -101,6 +116,9 @@ export default {
   name: 'header_',
   data () {
     return {
+      ueseName: '盐哔-',
+      levelFrom: 'UL.20',
+      levelTo: 'UL.21',
       headerLinkList: {
         game:[
           {gameName: '绝地求生' ,gameLink: 'https://live.bilibili.com/p/eden/area-tags#/2/80'},
@@ -312,12 +330,14 @@ export default {
   }
 
   .user {
+    line-height: normal;
     position: relative;
     width: 55px;
     height: 55px;
     display: inline-block;
 
     .user-box {
+      z-index: 100;
       position: absolute;
       border-radius: 50%;
       background: url('../../static/img/user.jpg') no-repeat center;
@@ -327,10 +347,69 @@ export default {
       transition: all .2s linear;
     }
 
+    .user-dropdown {
+      display: none;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      position: absolute;
+      background-color: #fff;
+      width: 295px;
+      height: 360px;
+      top: 55px;
+      left: -117px;
+      box-shadow: 0 5px 1em .2em rgba(221, 227, 232, .9);
+      /*弹出样式总是不对，需要更改，包括header左侧的弹出也不对，太生硬了。*/
+      animation: user-box-display .3s cubic-bezier(0.28, 0.04, 0.2, 1.02);
+
+      .id-experience-content {
+        overflow: hidden;
+        text-align: center;
+        margin-top: 50px;
+        font-size: 16px;
+        color: #646C7A;
+        animation: move-left-in .45s cubic-bezier(0.28, 0.04, 0.18, 0.97);
+
+        .icon-father {
+          width: 17px;
+          height: 17px;
+          display: inline-block;
+          background: url('../../static/img/grandfather.png') no-repeat center;
+          background-size: 100%;
+          margin-left: 2px;
+          transform: translateY(2px);
+        }
+
+        .experience {
+          border: 1px red solid;
+          width: 85%;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .ex-line {
+            border: 1px blue solid;
+            height: 10px;
+            border-radius: 10px;
+            width: 160px;
+          }
+        }
+
+        .experience span {
+          font-size: 12px;
+          color: #36B4E7;
+        }
+      }
+    }
+
     &:hover .user-box {
       background-size: 110%;
       transform: translateY(50%);
       box-shadow: 0 0 1em .1em rgba(35, 173, 229, .3)
+    }
+
+    &:hover .user-dropdown {
+      display: block;
     }
   }
 </style>

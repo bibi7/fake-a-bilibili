@@ -95,3 +95,23 @@
     opacity: 1
   }
 }
+
+@keyframes user-box-display {
+  0%{
+    height: 150px;
+  }
+  100%{
+    height: 360px;
+  }
+}
+
+@keyframes move-left-in {
+  0%{
+    transform: translateX(60px);
+    opacity: .5;
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
