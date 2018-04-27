@@ -75,17 +75,76 @@
             <!--id以及经验条区域-->
             <div class="id-experience-content">
               <span>{{ueseName}}</span>
-              <i :src="isGrandfatherUrl" class="icon-father"></i>
+              <i class="icon-father"></i>
               <div class="experience">
                 <span>{{levelFrom}}</span>
                 <div class="ex-line">
-
+                  <div class="ex-line-in"></div>
                 </div>
                 <span>{{levelTo}}</span>
               </div>
             </div>
             <!-- 金瓜子、银瓜子、成就值 -->
+            <div class="gode-silver-achievement">
+              <div class="gode-silver common-text-gray-hover-blue">
+                <div class="clear">
+                  <div class="left">
+                    <div>
+                      <img src="@/../static/img/gold.jpg">
+                      <span>金瓜子</span>
+                    </div>
+                  </div>
+                  <div class="right">
+                    <span>{{goldMoney}}</span>
+                  </div>
+                </div>
+                <div class="clear">
+                  <div class="left">
+                    <div>
+                      <img src="@/../static/img/silver.jpg">
+                      <span>银瓜子</span>
+                    </div>
+                  </div>
+                  <div class="right">
+                    <span>{{silverMoney}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="achievement common-text-gray-hover-blue">
+                <div class="clear">
+                  <div class="left">
+                    <div>
+                      <img src="@/../static/img/achievement.jpg">
+                      <span>成就值</span>
+                    </div>
+                  </div>
+                  <div class="right">
+                    <span>{{achievement}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
             <!--直播中心信息-->
+            <div class="broadcast-content">
+              <div class="broadcast-content-in">
+                <div>
+                  <div class="">
+                    1
+                  </div>
+                  <div class="">
+                    2
+                  </div>
+                </div>
+                <div>
+                  <div class="">
+                    3
+                  </div>
+                  <div class="">
+                    4
+                  </div>
+                </div>
+              </div>
+            </div>
             <!--退出-->
           </div>
         </a>
@@ -119,6 +178,9 @@ export default {
       ueseName: '盐哔-',
       levelFrom: 'UL.20',
       levelTo: 'UL.21',
+      goldMoney: '1000',
+      silverMoney: '1.8万',
+      achievement: '275',
       headerLinkList: {
         game:[
           {gameName: '绝地求生' ,gameLink: 'https://live.bilibili.com/p/eden/area-tags#/2/80'},
@@ -349,6 +411,7 @@ export default {
 
     .user-dropdown {
       display: none;
+      overflow: hidden;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
       position: absolute;
@@ -380,24 +443,100 @@ export default {
         }
 
         .experience {
-          border: 1px red solid;
           width: 85%;
-          margin: 0 auto;
+          margin: 10px auto 0;
           display: flex;
           align-items: center;
           justify-content: space-between;
 
           .ex-line {
-            border: 1px blue solid;
-            height: 10px;
+            position: relative;
+            background-color: #E6EDF3;
+            height: 8px;
             border-radius: 10px;
             width: 160px;
+          }
+
+          .ex-line-in {
+            border-radius: 10px;
+            position: absolute;
+            background: linear-gradient(to right, #1AF6F7, #08A3FF);
+            height: 100%;
+            width: 70%;
+            top: 0;
+            left: 0;
+            animation: experience-to-right .4s cubic-bezier(0.28, 0.04, 0.18, 0.97);
           }
         }
 
         .experience span {
           font-size: 12px;
           color: #36B4E7;
+        }
+      }
+
+      .gode-silver-achievement {
+        line-height: normal;
+        width: 90%;
+        margin: 20px auto 0;
+        animation: move-left-in-b .45s cubic-bezier(0.28, 0.04, 0.18, 0.97) .1s;
+        animation-fill-mode: backwards;
+
+        & > div {
+          border-bottom: 1px #e5e5e5 solid;
+        }
+
+        .gode-silver {
+          margin-top: 5px;
+          padding-bottom: 7px;
+          line-height: 20px;
+
+          & img {
+            vertical-align: bottom;
+          }
+
+          & > div:first-child {
+            margin-bottom: 10px;
+          }
+        }
+
+        .achievement {
+          line-height: 40px;
+
+          & img {
+            vertical-align: middle;
+            transform: translateY(-1px);
+          }
+        }
+      }
+
+      .broadcast-content {
+        margin-top: 10px;
+        width: 90%;
+        margin: 0 auto;
+        animation: move-left-in-b .45s cubic-bezier(0.28, 0.04, 0.18, 0.97) .2s;
+        animation-fill-mode: backwards;
+
+        .broadcast-content-in {
+          margin: 15px auto;
+          & > div {
+            display: flex;
+            justify-content: space-between;
+
+            & > div {
+              .common-text-gray-hover-blue;
+              width: 50%;
+            }
+          }
+        }
+
+      }
+
+      .common-text-gray-hover-blue {
+        color: #9FA2A9;
+
+        &:hover {
+          color: #35B4E7;
         }
       }
     }

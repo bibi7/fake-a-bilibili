@@ -10,6 +10,13 @@
   float: right;
 }
 
+.clear::after {
+  clear: both;
+  display: block;
+  content: '';
+  visibility: hidden;
+}
+
 @keyframes heightChange {
   0%{
     height: 0;
@@ -115,3 +122,29 @@
     opacity: 1;
   }
 }
+
+@keyframes move-left-in-b {
+  0%{
+    display: none;
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  100%{
+    display: block;
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes experience-to-right {
+  0%{
+    width: 0;
+    opacity: .5;
+  }
+  100%{
+    width: 70%;
+    opacity: 1;
+  }
+}
+
+/*all .4s cubic-bezier(.22,.58,.12,.98)*/
