@@ -127,25 +127,36 @@
             <!--直播中心信息-->
             <div class="broadcast-content">
               <div class="broadcast-content-in">
-                <div>
-                  <div class="">
-                    1
+                <div class="clear">
+                  <div class="broadcast-in left">
+                    <a href="#" class="a-broadcast">
+                      <span class="bro-center">直播中心</span>
+                    </a>
                   </div>
-                  <div class="">
-                    2
+                  <div class="broadcast-in right">
+                    <a href="#" class="a-space">
+                      <span class="main-space">主站空间</span>
+                    </a>
                   </div>
                 </div>
-                <div>
-                  <div class="">
-                    3
+                <div class="clear">
+                  <div class="broadcast-in left">
+                    <a href="#" class="a-message">
+                      <span class="message-center">消息中心</span>
+                    </a>
                   </div>
-                  <div class="">
-                    4
+                  <div class="broadcast-in right">
+                    <a href="#" class="a-live">
+                      <span class="my-live">我的直播间</span>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
             <!--退出-->
+            <div class="exit common-text-gray-hover-blue">
+              <span>退出登陆</span>
+            </div>
           </div>
         </a>
         <nav>
@@ -410,6 +421,7 @@ export default {
     }
 
     .user-dropdown {
+      position: relative;
       display: none;
       overflow: hidden;
       border-bottom-left-radius: 5px;
@@ -501,7 +513,7 @@ export default {
         }
 
         .achievement {
-          line-height: 40px;
+          line-height: 45px;
 
           & img {
             vertical-align: middle;
@@ -511,21 +523,111 @@ export default {
       }
 
       .broadcast-content {
-        margin-top: 10px;
         width: 90%;
         margin: 0 auto;
         animation: move-left-in-b .45s cubic-bezier(0.28, 0.04, 0.18, 0.97) .2s;
         animation-fill-mode: backwards;
 
         .broadcast-content-in {
-          margin: 15px auto;
+          margin: 10px auto;
           & > div {
-            display: flex;
-            justify-content: space-between;
+            padding-left: 20px;
 
             & > div {
               .common-text-gray-hover-blue;
               width: 50%;
+            }
+          }
+          & > div > div:nth-child(1) {
+            text-align: left;
+          }
+          & > div > div:nth-child(2){
+            text-align: right;
+          }
+
+          .broadcast-in {
+
+            & a {
+              position: relative;
+              line-height: 35px;
+              .common-text-gray-hover-blue
+            }
+
+            .a-broadcast:hover .bro-center::before{
+              position: absolute;
+              width: 16px;
+              height: 16px;
+              background: url('../../static/img/broadcast-center-active.png') center;
+              transform: translateY(55%);
+              left: -20px;
+              content: '';
+            }
+
+            .a-space:hover .main-space::before{
+              position: absolute;
+              width: 16px;
+              height: 16px;
+              background: url('../../static/img/main-space-active.png') center;
+              transform: translateY(55%);
+              left: -20px;
+              content: '';
+            }
+
+            .a-message:hover .message-center::before{
+              position: absolute;
+              width: 16px;
+              height: 16px;
+              background: url('../../static/img/message-center-active.png') center;
+              transform: translateY(55%);
+              left: -20px;
+              content: '';
+            }
+
+            .a-live:hover .my-live::before{
+              position: absolute;
+              width: 16px;
+              height: 16px;
+              background: url('../../static/img/my-live-active.png') center;
+              transform: translateY(55%);
+              left: -20px;
+              content: '';
+            }
+
+            .bro-center::before {
+              position: absolute;
+              width: 16px;
+              height: 16px;
+              background: url('../../static/img/broadcast-center.png') center;
+              transform: translateY(55%);
+              left: -20px;
+              content: '';
+            }
+            .main-space::before {
+              position: absolute;
+              width: 16px;
+              height: 16px;
+              background: url('../../static/img/main-space.png') center;
+              transform: translateY(55%);
+              left: -20px;
+              content: '';
+            }
+            .message-center::before {
+              position: absolute;
+              width: 16px;
+              height: 16px;
+              background: url('../../static/img/message-center.png') center;
+              transform: translateY(55%);
+              left: -20px;
+              content: '';
+            }
+            .my-live::before {
+              position: absolute;
+              width: 16px;
+              height: 16px;
+              background: url('../../static/img/my-live.png') center;
+              transform: translateY(55%);
+              left: -20px;
+              content: '';
             }
           }
         }
@@ -538,6 +640,19 @@ export default {
         &:hover {
           color: #35B4E7;
         }
+      }
+
+      .exit {
+        position: absolute;
+        // transform: translateY(50px);
+        width: 100%;
+        height: 50px;
+        bottom: 0;
+        background: #F1F2F4;
+        color: #B8B8B8;
+        line-height: 50px;
+        animation: login-out .45s cubic-bezier(0.28, 0.04, 0.18, 0.97) .3s;
+        animation-fill-mode: backwards;
       }
     }
 
