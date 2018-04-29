@@ -70,7 +70,9 @@
       </div>
       <div class="right">
         <a href="#" class="user left">
-          <div class="user-box"></div>
+          <div class="user-box">
+            <div class="user-hover-shadow"></div>
+          </div>
           <div class="user-dropdown">
             <!--id以及经验条区域-->
             <div class="id-experience-content">
@@ -230,6 +232,14 @@ export default {
 
 <style lang="less" scoped>
 @height: 55px;
+.user-hover-shadow {
+  z-index: 50;
+  display: none;
+  position: absolute;
+  border-radius: 50%;
+  animation: bg-animation .5s cubic-bezier(0.28, 0.04, 0.18, 0.97);
+}
+
   .header {
     height: @height;
     background-color: #fff;
@@ -660,6 +670,10 @@ export default {
       background-size: 110%;
       transform: translateY(50%);
       box-shadow: 0 0 1em .1em rgba(35, 173, 229, .3)
+    }
+
+    &:hover .user-hover-shadow {
+      display: block;
     }
 
     &:hover .user-dropdown {
