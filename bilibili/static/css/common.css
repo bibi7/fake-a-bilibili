@@ -177,4 +177,13 @@
     opacity: 1;
   }
 }
+
+@keyframes recommend-fade {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: .5;
+  }
+}
 /*all .4s cubic-bezier(.22,.58,.12,.98)*/

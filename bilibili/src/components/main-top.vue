@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="top clear">
-    <!-- <mainTopLeft/> -->
+    <mainTopLeft/>
     <mainTopRight/>
   </div>
 </template>

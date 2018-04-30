@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="top-left left">
-    1
+    banner unfinish yet
   </div>
 </template>
 
