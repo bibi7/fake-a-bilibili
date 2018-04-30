@@ -447,6 +447,7 @@ export default {
       height: 360px;
       top: 55px;
       left: -117px;
+      z-index: 10;
       box-shadow: 0 5px 1em .2em rgba(221, 227, 232, .9);
       /*弹出样式总是不对，需要更改，包括header左侧的弹出也不对，太生硬了。*/
       animation: user-box-display .3s cubic-bezier(0.28, 0.04, 0.2, 1.02);
