@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="header-input right">
     <div>
-      <input type="text" name="" value="" placeholder="许下你的愿望吧_(:з」∠)_">
+      <input type="text" name="" value="" placeholder="许下你的愿望吧_(:з」∠)_" v-model="searchMsg">
       <button type="button">
         <i class="search-icon" @mousedown="searchMousedown" @mouseup="searchMouseup"></i>
       </button>
@@ -14,7 +14,7 @@ export default {
   name: 'commonInput',
   data () {
     return {
-
+      searchMsg: '',
     }
   },
   methods: {
@@ -46,6 +46,7 @@ export default {
       border-radius: 20px;
       height: 30px;
       & input {
+        font-size: 12px;
         position: absolute;
         left: 0;
         width: 200px;

@@ -665,6 +665,7 @@ export default {
         bottom: 0;
         background: #F1F2F4;
         color: #B8B8B8;
+        text-align: center;
         line-height: 50px;
         animation: login-out .45s cubic-bezier(0.28, 0.04, 0.18, 0.97) .3s;
         animation-fill-mode: backwards;
