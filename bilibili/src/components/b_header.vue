@@ -179,11 +179,13 @@
           </a>
         </nav>
       </div>
+      <headerInput/>
     </div>
   </div>
 </template>
 
 <script>
+import headerInput from './commonInput.vue'
 export default {
   name: 'header_',
   data () {
@@ -226,6 +228,9 @@ export default {
         ]
       }
     }
+  },
+  components: {
+    headerInput
   }
 }
 </script>
