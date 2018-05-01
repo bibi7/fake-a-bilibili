@@ -21,6 +21,14 @@
   visibility: hidden;
 }
 
+.po-re {
+  position: relative;
+}
+
+.po-ab {
+  position: absolute;
+}
+
 @keyframes heightChange {
   0%{
     height: 0;

@@ -6,8 +6,18 @@
              :class="index == 0 ? 'recommend-one' : index == 1 ? 'recommend-two'
              :index == 2 ? 'recommend-three': index == 3 ? 'recommend-four' : '' ">
           <div>
-            <div class="recommend-shadow">
-
+            <div class="recommend-shadow"></div>
+            <div class="recommend-info">
+              <p>{{recommend.recommendTitle}}</p>
+              <div class="clear">
+                <div class="left">
+                  <span>{{recommend.recommendOwner}}</span>
+                </div>
+                <div class="right">
+                  <i class="watch-people po-re"></i>
+                  <span>{{recommend.recommendWatchPeople}}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -71,10 +81,15 @@ export default {
           width: 100%;
           height: 100%;
           position: relative;
+          overflow: hidden;
         }
 
-        & > div:hover .recommend-shadow{
+        & > div:hover .recommend-shadow {
           display: block;
+        }
+
+        & > div:hover .recommend-info {
+          bottom: 0;
         }
       }
 
@@ -84,8 +99,37 @@ export default {
         position: absolute;
         width: 100%;
         height: 100%;
+        transition: all .35s cubic-bezier(0.28, 0.04, 0.18, 0.97);
         animation: recommend-fade .45s cubic-bezier(0.28, 0.04, 0.18, 0.97);
         animation-fill-mode: forwards;
+      }
+      .recommend-info {
+        padding-left: 10px;
+        position: absolute;
+        font-size: 14px;
+        color: #fff;
+        width: 100%;
+        bottom: -23px;
+        transition: all .35s cubic-bezier(0.28, 0.04, 0.18, 0.97);
+
+        & > div{
+          margin-top: 2px;
+          line-height: 30px;
+
+          & > div:nth-child(2) {
+            margin-right: 50px;
+          }
+        }
+
+        .watch-people::before {
+          content: '';
+          position: absolute;
+          left: -20px;
+          top: 2px;
+          width: 16px;
+          height: 16px;
+          background: url('../../static/img/recommend/watch.png')
+        }
       }
 
     }
