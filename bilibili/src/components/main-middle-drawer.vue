@@ -60,7 +60,7 @@ export default {
 
         .rotate::before {
           transform: rotate(0turn);
-          transition: all .2s linear;
+          transition: all .4s cubic-bezier(.22,.58,.12,.98);
           content: '';
           position: absolute;
           background: url('../../static/img/rotate.png') no-repeat;
