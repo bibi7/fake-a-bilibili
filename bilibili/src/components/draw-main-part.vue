@@ -2,13 +2,14 @@
   <div class="draw-bg">
     <div class="draw-main">
       <drawMainTop/>
+      <drawMiddleDrawer/>
     </div>
   </div>
 </template>
 
 <script>
 import drawMainTop from './main-top.vue'
-
+import drawMiddleDrawer from './main-middle-drawer.vue'
 export default {
   name: 'drawMainPart',
   data () {
@@ -18,6 +19,7 @@ export default {
   },
   components: {
     drawMainTop,
+    drawMiddleDrawer,
   }
 }
 </script>
