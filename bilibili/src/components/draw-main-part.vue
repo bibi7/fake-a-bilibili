@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   .draw-bg {
     background: url('../../static/img/draw-bg.jpg') no-repeat center -50px;
     min-height: 900px;

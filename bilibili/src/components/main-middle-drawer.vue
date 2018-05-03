@@ -9,21 +9,46 @@
         <span>换一批</span>
       </div>
     </div>
+    <div class="draw-main">
+      <a v-for="item in newDrawer.drawerInfo">
+        <div class="draw-independent">
+          <!--drawer背景，宽高200 128-->
+          <div :style="{background: item.path}"></div>
+          <!--鼠标悬浮部分-->
+          <div class="shadow">
+            <div class="shadow-info">
+              test
+            </div>
+          </div>
+          <!--个人信息部分-->
+          <div class="draw-info-title">
+            <p>{{item.title}}</p>
+          </div>
+          <!--drawer id部分-->
+          <div class="draw-info-id">
+
+          </div>
+        </div>
+      </a>
+    </div>
   </div>
+
 </template>
 
 <script>
+import {newDrawer} from '@/../static/js/draw-recommend/newDrawer.js'
+
 export default {
   name: 'middle-drawer',
   data () {
     return {
-
+      newDrawer: newDrawer
     }
   }
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   .middle {
     padding-top: 30px;
 
@@ -60,7 +85,7 @@ export default {
 
         .rotate::before {
           transform: rotate(0turn);
-          transition: all .4s cubic-bezier(.22,.58,.12,.98);
+          transition: all .4s cubic-bezier(.22, .58, .12, .98);
           content: '';
           position: absolute;
           background: url('../../static/img/rotate.png') no-repeat;
@@ -70,7 +95,64 @@ export default {
           right: 7px;
         }
       }
+    }
 
+    .draw-main {
+      display: flex;
+      justify-content: space-between;
+
+      & > a {
+        cursor: pointer;
+        display: block;
+
+        .draw-independent {
+          color: #000;
+          position: relative;
+          width: 200px;
+          height: 177px;
+
+          .draw-info-title {
+            padding: 10px 0;
+            font-size: 14px;
+          }
+
+          .shadow {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 128px;
+            background-color: #4FC1E9;
+
+            .shadow-info {
+              animation: move-right .2s cubic-bezier(0.28, 0.04, 0.18, 0.97);
+              animation-fill-mode: forwards;
+              color: #fff;
+            }
+          }
+
+          .draw-info-id {
+
+          }
+
+          & > div:first-child {
+            width: 200px;
+            height: 128px;
+            background-size: 100% 100%!important;
+          }
+
+          &:hover {
+            color: #4FC1E9;
+          }
+
+          &:hover .shadow {
+            display: block;
+          }
+        }
+
+
+      }
     }
   }
 </style>

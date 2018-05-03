@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
   .top-left {
     width: 648px;
     height: 277px;

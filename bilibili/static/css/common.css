@@ -194,4 +194,15 @@
     opacity: .5;
   }
 }
+
+@keyframes move-right {
+  0%{
+    transform: translateX(0);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(60px);
+    opacity: 1;
+  }
+}
 /*all .4s cubic-bezier(.22,.58,.12,.98)*/
