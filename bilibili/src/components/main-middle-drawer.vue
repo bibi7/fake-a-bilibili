@@ -17,7 +17,10 @@
           <!--鼠标悬浮部分-->
           <div class="shadow">
             <div class="shadow-info">
-              test
+              <div class="shadow-info-main">
+                <div class="info-radius" :style="{background: item.smallPath}"></div>
+                <span class="live">Live</span>
+              </div>
             </div>
           </div>
           <!--个人信息部分-->
@@ -26,7 +29,8 @@
           </div>
           <!--drawer id部分-->
           <div class="draw-info-id">
-
+            <i class="little-draw-man"></i>
+            <span>{{item.userName}}</span>
           </div>
         </div>
       </a>
@@ -117,6 +121,7 @@ export default {
           }
 
           .shadow {
+            overflow: hidden;
             display: none;
             position: absolute;
             top: 0;
@@ -126,14 +131,70 @@ export default {
             background-color: #4FC1E9;
 
             .shadow-info {
-              animation: move-right .2s cubic-bezier(0.28, 0.04, 0.18, 0.97);
+              position: relative;
+              height: 100%;
+              animation: move-right .3s cubic-bezier(0.28, 0.04, 0.18, 0.97);
               animation-fill-mode: forwards;
               color: #fff;
+
+              .shadow-info-main {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+
+                .info-radius {
+                  display: inline-block;
+                  background-size: 100%!important;
+                  width: 60px;
+                  height: 60px;
+                  border-radius: 50%;
+                }
+
+                .live {
+                  position: relative;
+                  display: inline-block;
+                  padding: 0 0 0 20px;
+                  box-sizing: border-box;
+                  font-size: 12px;
+                  transform: translateY(-25px);
+                  margin-left: 15px;
+                  border: 1px #fff solid;
+                  border-radius: 20px;
+                  width: 52px;
+                  line-height: 17px;
+                  height: 20px;
+
+                  &::before {
+                    content: '\25CF';
+                    position: absolute;
+                    top: 0;
+                    left: 7px;
+                    display: block;
+                  }
+                }
+              }
             }
           }
 
           .draw-info-id {
+            position: relative;
 
+            .little-draw-man::before {
+              content: '';
+              position: absolute;
+              background: url('../../static/img/drawer-man.jpg');
+              width: 14px;
+              height: 14px;
+              top: 2px;
+              left: 0;
+              display: block;
+            }
+
+            & > span {
+              color: #9F9F9F;
+              font-size: 12px;
+              margin-left: 20px;
+            }
           }
 
           & > div:first-child {
