@@ -1,6 +1,9 @@
 /*
  *  for common css part
  */
+html {
+  min-width: 1096px;
+}
 
 .left {
   float: left;

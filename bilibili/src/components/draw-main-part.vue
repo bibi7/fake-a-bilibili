@@ -11,6 +11,7 @@
 import drawMainTop from './main-top.vue'
 import drawMiddleDrawer from './main-middle-drawer.vue'
 export default {
+  
   name: 'drawMainPart',
   data () {
     return {
