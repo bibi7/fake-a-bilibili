@@ -3,6 +3,7 @@
     <div class="draw-main">
       <drawMainTop/>
       <drawMiddleDrawer/>
+      <drawUnderDrawer/>
     </div>
   </div>
 </template>
@@ -10,8 +11,9 @@
 <script>
 import drawMainTop from './main-top.vue'
 import drawMiddleDrawer from './main-middle-drawer.vue'
+import drawUnderDrawer from './main-under-drawer.vue'
 export default {
-  
+
   name: 'drawMainPart',
   data () {
     return {
@@ -21,6 +23,7 @@ export default {
   components: {
     drawMainTop,
     drawMiddleDrawer,
+    drawUnderDrawer,
   }
 }
 </script>
