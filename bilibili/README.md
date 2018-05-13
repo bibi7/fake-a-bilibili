@@ -8,11 +8,11 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# run demo
 npm run dev
 
-# then you can visit it at localhost:8080
+# service now running at localhost:8080
 localhost:8080
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+have fun ;)
