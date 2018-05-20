@@ -1,6 +1,9 @@
 # fake-a-bilibili
-fake a bilibili project from the beginning, update with irregular and just for fun.
+闲得无聊做个直播首页，主要觉得b站的css3动画懂得很棒想试试，基本上没什么js。
 
+
+## 预览图
+![pre-view](./bilibili/static/img/pre-view/pre-view.png)
 
 ## Build Setup
 
