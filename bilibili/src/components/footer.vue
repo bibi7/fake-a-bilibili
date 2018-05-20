@@ -2,9 +2,9 @@
   <div class="footer">
     <div class="clear">
       <!--左侧，包含各种合作信息和连接-->
-      <div class="info left">
+      <div class="info left clear">
         <div class="left">
-          <dl>
+          <dl class="left-dl">
             <dt></dt>
             <dd>
               <a href="http://www.bilibili.com/html/aboutUs.html" target="_blank">关于我们</a>
@@ -25,7 +25,7 @@
         </div>
         <div class="left"></div>
         <div class="left">
-          <dl>
+          <dl class="right-dl clear">
             <dd>
               <a href="http://www.bilibili.com/html/aboutUs.html" target="_blank">帮助中心</a>
             </dd>
@@ -38,13 +38,44 @@
             <dd>
               <a href="http://www.bilibili.com/html/contact.html" target="_blank">如何成为主播</a>
             </dd>
-
           </dl>
+        </div>
+        <div class="other-info">
+          <div>
+            <div>
+              <div class="partner partner-top"></div>
+              <div class="partner partner-under"></div>
+            </div>
+            <div class="icp">
+              <ul>
+                <li>广播电视节目制作经营许可证：(沪) 字第 1248 号</li>
+                <li>网络文化经营许可证：沪网文 [2013]0480-056 号</li>
+                <li>信息网络传播视听节目许可证：0910417</li>
+              </ul>
+              <ul>
+                <li>互联网 ICP 备案：沪 ICP 备 13002172 号 - 3</li>
+                <li>沪 ICP 证：沪 B2-20100043</li>
+                <li>
+                  <a href="http://jb.ccm.gov.cn" target="_blank">12318 全国文化市场举报网站</a>
+                </li>
+                <li>
+                  <a href="http://www.12377.cn/?spm=a2hww.20023042.0.0" target="_blank">上海市互联网违法和不良信息举报中心</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       <!--右侧，二维码部分-->
       <div class="right">
-        2
+        <div class="footer-right">
+          <ul class="footer-right-ul clear">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -74,12 +105,18 @@ export default {
 
     .info > div:nth-child(3) {
       margin: 50px 0 0 74px;
-      // padding-left: 74px;
+      width: 240px;
     }
 
-    .info dl{
+    .left-dl {
       width: 434px;
+    }
 
+    .right-dl {
+      width: 240px;
+    }
+
+    .info dl {
       & dt {
         background: url('../../static/img/footer/logo.svg') no-repeat;
         background-size: 60px 28px;
@@ -98,6 +135,66 @@ export default {
           &:hover {
             color: #60ADE8;
           }
+        }
+      }
+    }
+
+    .other-info {
+      padding-top: 130px;
+
+      & > div {
+        display: flex;
+      }
+
+      .partner {
+        background: url('../../static/img/footer/partner.png') no-repeat;
+        width: 100px;
+        height: 35px;
+      }
+
+      .partner-top {
+        background-position: 0 -458px;
+      }
+
+      .partner-under {
+        margin-top: 7px;
+        background-position: 0 -508px;
+      }
+
+      .icp {
+        width: 566px;
+        margin: 6px 0 0 28px;
+        font-size: 12px;
+        color: #999;
+        line-height: 1.5;
+
+        & > ul {
+          width: 50%;
+          float: left;
+
+          & a {
+            color: #999;
+
+            &:hover {
+              color: #60ADE8;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-right {
+      width: 220px;
+
+      .footer-right-ul {
+        border: 1px red solid;
+
+        & > li {
+          width: 90px;
+          height: 121px;
+          position: relative;
+          margin-right: 10px;
+          float: left;
         }
       }
     }
