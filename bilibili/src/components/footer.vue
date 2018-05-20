@@ -70,10 +70,38 @@
       <div class="right">
         <div class="footer-right">
           <ul class="footer-right-ul clear">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>
+              <a href="//link.bilibili.com/p/eden/download">
+                <div class="circle">
+
+                </div>
+                <div class="footer-text">bilibili link 下载</div>
+              </a>
+            </li>
+            <li>
+              <a href="//link.bilibili.com/p/help/index#/contact">
+                <div class="circle">
+
+                </div>
+                <div class="footer-text">联系客服</div>
+              </a>
+            </li>
+            <li>
+              <a>
+                <div class="circle">
+
+                </div>
+                <div class="footer-text">官方微信</div>
+              </a>
+            </li>
+            <li>
+              <a href="http://weibo.com/u/5245903632">
+                <div class="circle">
+
+                </div>
+                <div class="footer-text">新浪微博</div>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -187,7 +215,6 @@ export default {
       width: 220px;
 
       .footer-right-ul {
-        border: 1px red solid;
 
         & > li {
           width: 90px;
@@ -195,6 +222,23 @@ export default {
           position: relative;
           margin-right: 10px;
           float: left;
+
+          .circle {
+            margin: 0 auto;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            line-height: 58px;
+            border: 1px #dedede solid;
+            color: #a7abac;
+          }
+
+          .footer-text {
+            font-size: 12px;
+            color: #999;
+            margin-top: 10px;
+            text-align: center;
+          }
         }
       }
     }
