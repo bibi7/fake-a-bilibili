@@ -50,7 +50,7 @@ export default {
 <style lang="less" scoped>
 @import '../../static/css/draw.less';
 .middle {
-  padding-top: 30px;
+  padding: 30px 0 60px 0;
 
   .draw-title {
     padding: 16px 0;

@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="top-left left">
-    banner unfinish yet
+    banner unfinish yet_(:з」∠)_
   </div>
 </template>
 
