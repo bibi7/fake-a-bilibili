@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="top-right right right-section">
     <section class="right-section">
-      <a href="#" v-for="(recommend, index) in recommends">
+      <a :href="recommend.url" v-for="(recommend, index) in recommends">
         <div class="recommend"
              :class="index == 0 ? 'recommend-one' : index == 1 ? 'recommend-two'
              :index == 2 ? 'recommend-three': index == 3 ? 'recommend-four' : '' ">

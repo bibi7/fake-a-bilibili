@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="draw-main">
-      <a v-for="item in newDrawer.drawerInfo">
+      <a v-for="item in newDrawer.drawerInfo" :href="item.url">
         <div class="draw-independent">
           <!--drawer背景，宽高200 128-->
           <div :style="{background: item.path}"></div>
